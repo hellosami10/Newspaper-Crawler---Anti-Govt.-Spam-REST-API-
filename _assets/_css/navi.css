@@ -1,0 +1,38 @@
+.navi-wraper ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #596174;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+}
+.navi-wraper ul > li {
+    flex: 1;
+}
+
+.navi-wraper ul li {
+    display: inline;
+    text-align: center;
+    color: #FFF;
+    cursor: pointer;
+}
+.navi-wraper ul li:hover:before{
+    color: #FFFF00;
+}
+
+
+
+.navi-wraper ul li:before {
+    font-family: "remixicon";
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f105";
+    position: relative;
+    top: 3px;
+    margin-right: 3px;
+}

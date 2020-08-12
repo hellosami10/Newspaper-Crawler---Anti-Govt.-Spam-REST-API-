@@ -1,0 +1,23 @@
+.main-content {
+    max-width: 768px;
+    margin: 0 auto;
+
+}
+.header-text {
+    letter-spacing: 2.5px;
+    text-align: center;
+    font-size: 24px;
+    display: inline;
+    font-family: 'Staatliches', cursive;
+    color: #FFF;
+}
+
+.header-text sup {
+    font-size: 14px;
+}
+.header-wraper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #303a52;
+}
