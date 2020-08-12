@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&display=swap');
+
+    .list-wraper > ul {
+        list-style-type: none;
+        font-family: 'Baloo Da 2', cursive;
+        height: 300px;
+        overflow-y: auto;
+        background-color: #f4f4f4;
+    }
+
+
+    .list-wraper > ul > li:hover {
+        cursor: pointer;
+        color: red;
+        width: max-content;
+    }
+
+    .list-wraper > ul > li::before {
+        font-family: "remixicon";
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: "\f105";
+        position: relative;
+        top: 3px;
+        margin-right: 4px;
+        color: #27ae60;
+    }

@@ -10,8 +10,12 @@
     font-family: 'Lato', sans-serif;
     font-size: 14px;
 }
-.navi-wraper ul > li {
+.navi-wraper ul li {
     flex: 1;
+}
+
+.active {
+    color: #FFFF00 !important;
 }
 
 .navi-wraper ul li {
@@ -20,11 +24,6 @@
     color: #FFF;
     cursor: pointer;
 }
-.navi-wraper ul li:hover:before{
-    color: #FFFF00;
-}
-
-
 
 .navi-wraper ul li:before {
     font-family: "remixicon";
@@ -36,3 +35,8 @@
     top: 3px;
     margin-right: 3px;
 }
+
+.navi-wraper ul li:hover {
+    color: #FFFF00;
+}
+
