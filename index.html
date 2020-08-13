@@ -25,7 +25,7 @@
 
     </style>
 </head>
-<body onload="x10(1)">
+<body onload="x10('https://netra.news/', 1)">
     <div class="main-content">
         <!-- Header -->
         <div class="header-wraper">
@@ -36,12 +36,12 @@
         <!-- Navigation Bar -->
         <div class="navi-wraper">
             <ul>
-                <li class="active" onclick='x10(1)'>Netra News</li>
-                <li>Bangla Insider</li>
-                <li>NorthEast Now</li>
-                <li>Eastern Link</li>
-                <li>Shersha News</li>
-                <li>Defres 360</li>
+                <li onclick="x10('https://netra.news/', 1)">Netra News</li>
+                <li onclick="x10('https://www.banglainsider.com/', 1)">Bangla Insider</li>
+                <li onclick="x10('https://nenow.in/', 1)">NorthEast Now</li>
+                <li onclick="x10('https://theeasternlink.com/', 1)">Eastern Link</li>
+                <li onclick="x10('http://www.shershanews24.com/', 1)">Shersha News</li>
+                <li onclick="x10('http://www.defres360.com/', 1)">Defres 360</li>
 
             </ul>
         </div>
@@ -67,10 +67,10 @@
 
     <script>
 
-        function x10(page_no) {
+        function x10(url, page_no) {
            
 
-            var url = 'https://netra.news/wp-json/wp/v2/posts?page=' + page_no;
+            var url = url + 'wp-json/wp/v2/posts?page=' + page_no;
             var loaderText = document.getElementById('loader-text');
             var res = document.getElementById('result');
             var loaderGif = document.getElementById('loader-gif');
