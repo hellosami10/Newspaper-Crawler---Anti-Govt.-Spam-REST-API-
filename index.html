@@ -15,7 +15,12 @@
 
     
 
- 
+    .loader-gif {
+        object-fit: contain;
+        width: 100%;
+        height: 300px;
+        mix-blend-mode: multiply;
+    }
 
 
     </style>
@@ -27,38 +32,75 @@
             <h1 class="header-text">Newspaper Crawler - Anti Govt. & Spam<sup>Beta</sup></h1>
         </div>
         
+
         <!-- Navigation Bar -->
         <div class="navi-wraper">
             <ul>
-                <li class="active">Bangla Insider</li>
+                <li class="active">Netra News</li>
+                <li>Bangla Insider</li>
                 <li>NorthEast Now</li>
                 <li>Eastern Link</li>
-                <li>Netra News</li>
                 <li>Shersha News</li>
+                <li>Defres 360</li>
+
             </ul>
         </div>
         <br>
         <!-- List -->
         <div class="list-wraper">
-            <ul>
-                <li>যতদিন ছিলাম সততার সঙ্গে দায়িত্ব পালন করেছি : আবুল কালাম</li>
-                <li>দ্বিতীয় টেস্টে বাদ পড়ছেন শাদাব, ব্যাটসম্যান বাড়াবে পাকিস্তান!</li>
-                <li>জাবরির ছেলে-মেয়েকে হত্যা করেছেন সৌদি যুবরাজ!</li>
-                <li>শেকৃবির হালনাগাদ করা নতুন ওয়েবসাইট উদ্বোধন</li>
-                <li>বার্সেলোনার এক খেলোয়াড় করোনায় আক্রান্ত</li>
-                <li>যতদিন ছিলাম সততার সঙ্গে দায়িত্ব পালন করেছি : আবুল কালাম</li>
-                <li>দ্বিতীয় টেস্টে বাদ পড়ছেন শাদাব, ব্যাটসম্যান বাড়াবে পাকিস্তান!</li>
-                <li>জাবরির ছেলে-মেয়েকে হত্যা করেছেন সৌদি যুবরাজ!</li>
-                <li>শেকৃবির হালনাগাদ করা নতুন ওয়েবসাইট উদ্বোধন</li>
-                <li>বার্সেলোনার এক খেলোয়াড় করোনায় আক্রান্ত</li>
-                <li>যতদিন ছিলাম সততার সঙ্গে দায়িত্ব পালন করেছি : আবুল কালাম</li>
-                <li>দ্বিতীয় টেস্টে বাদ পড়ছেন শাদাব, ব্যাটসম্যান বাড়াবে পাকিস্তান!</li>
-                <li>জাবরির ছেলে-মেয়েকে হত্যা করেছেন সৌদি যুবরাজ!</li>
-                <li>শেকৃবির হালনাগাদ করা নতুন ওয়েবসাইট উদ্বোধন</li>
-                <li>বার্সেলোনার এক খেলোয়াড় করোনায় আক্রান্ত</li>
+            <ul id="result">
+                <img class="loader-gif" id="loader-gif" src="earth.gif" alt="">
             </ul>
         </div>
 
     </div>
+
+
+
+    <script>
+        const url = 'https://netra.news/wp-json/wp/v2/posts?per_page=20';
+        var loaderText = document.getElementById('loader-text');
+        var res = document.getElementById('result');
+        var loaderGif = document.getElementById('loader-gif');
+        
+        loaderGif.style.display = "block";
+    
+        var ourRequest = new XMLHttpRequest();
+        ourRequest.open('GET', url);
+        ourRequest.onload = function() {
+        if (ourRequest.status >= 200 && ourRequest.status < 400) {
+            var data = JSON.parse(ourRequest.responseText);
+
+            // console.log(data);
+            loaderGif.style.display = "none";
+            
+            for(var i = 0; i < data.length; i++) {
+                var li = document.createElement("li");
+                var a = document.createElement("a");
+
+
+                a.innerHTML = data[i].title.rendered;
+                a.setAttribute("href",data[i].link);
+                a.setAttribute("target","_blank");
+
+
+
+
+                li.appendChild(a);
+                res.appendChild(li);
+            }
+
+
+        } else {
+            console.log("We connected to the server, but it returned an error.");
+        }
+        };
+    
+        ourRequest.onerror = function() {
+            console.log("Connection error");
+        };
+    
+        ourRequest.send();
+    </script>
 </body>
 </html>

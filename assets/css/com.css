@@ -7,3 +7,7 @@
 
     font-weight: 400;
 }
+
+a:visited {
+    color: #0000ee;
+}

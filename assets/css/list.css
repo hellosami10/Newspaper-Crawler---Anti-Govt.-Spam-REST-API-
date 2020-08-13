@@ -6,13 +6,17 @@
         height: 300px;
         overflow-y: auto;
         background-color: #f4f4f4;
+        padding: 0 16px;
+        font-size: 18px;
+    }
+    .list-wraper > ul > li > a {
+        position: relative;
+        left: 4px;
     }
 
-
-    .list-wraper > ul > li:hover {
+    .list-wraper > ul > li > a:hover {
         cursor: pointer;
         color: red;
-        width: max-content;
     }
 
     .list-wraper > ul > li::before {
@@ -20,9 +24,12 @@
         font-style: normal;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        content: "\f105";
+        content: "\eb7c";
         position: relative;
-        top: 3px;
-        margin-right: 4px;
         color: #27ae60;
+        display: inline-block; 
+        width: 1em;
+        margin-left: -1em;
+        font-size: 9px;
+        top: -1px;
     }
