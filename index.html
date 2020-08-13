@@ -26,7 +26,11 @@
     </style>
 </head>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <body onload="x10('https://netra.news/', 1)">
+=======
+<body>
+>>>>>>> parent of 34a1cff... Pagination Added - Netra News
 =======
 <body>
 >>>>>>> parent of 34a1cff... Pagination Added - Netra News
@@ -41,6 +45,7 @@
         <div class="navi-wraper">
             <ul>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <li onclick="x10('https://netra.news/', 1)">Netra News</li>
                 <li onclick="x10('https://www.banglainsider.com/', 1)">Bangla Insider</li>
                 <li onclick="x10('https://nenow.in/', 1)">NorthEast Now</li>
@@ -48,6 +53,8 @@
                 <li onclick="x10('http://www.shershanews24.com/', 1)">Shersha News</li>
                 <li onclick="x10('http://www.defres360.com/', 1)">Defres 360</li>
 =======
+=======
+>>>>>>> parent of 34a1cff... Pagination Added - Netra News
                 <li class="active">Netra News</li>
                 <li>Bangla Insider</li>
                 <li>NorthEast Now</li>
@@ -72,6 +79,7 @@
 
     <script>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         function x10(url, page_no) {
            
@@ -83,6 +91,8 @@
             var pagination = document.getElementById('pagination');
             
 =======
+=======
+>>>>>>> parent of 34a1cff... Pagination Added - Netra News
         const url = 'https://netra.news/wp-json/wp/v2/posts?per_page=20';
         var loaderText = document.getElementById('loader-text');
         var res = document.getElementById('result');
@@ -98,11 +108,15 @@
 
             // console.log(data);
             loaderGif.style.display = "none";
+<<<<<<< HEAD
+>>>>>>> parent of 34a1cff... Pagination Added - Netra News
+=======
 >>>>>>> parent of 34a1cff... Pagination Added - Netra News
             
             for(var i = 0; i < data.length; i++) {
                 var li = document.createElement("li");
                 var a = document.createElement("a");
+<<<<<<< HEAD
 
 
                 a.innerHTML = data[i].title.rendered;
@@ -112,6 +126,17 @@
 
 
 
+=======
+
+
+                a.innerHTML = data[i].title.rendered;
+                a.setAttribute("href",data[i].link);
+                a.setAttribute("target","_blank");
+
+
+
+
+>>>>>>> parent of 34a1cff... Pagination Added - Netra News
                 li.appendChild(a);
                 res.appendChild(li);
             }
