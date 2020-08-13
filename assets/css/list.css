@@ -33,3 +33,23 @@
         font-size: 9px;
         top: -1px;
     }
+
+    .pagination-wraper {
+        display: flex;
+        justify-content: center;
+    }
+    .pagination-wraper > ul {
+        width: max-content;
+        list-style-type: none;
+        color: #FFF;
+    }
+    .pagination-wraper > ul > li {
+        display: inline;
+        display: inline;
+        padding: 14px 16px;
+        background-color: #596174;
+    }
+    .pagination-wraper > ul > li:hover {
+        background-color: #6f788d;
+        cursor: pointer;
+    }
