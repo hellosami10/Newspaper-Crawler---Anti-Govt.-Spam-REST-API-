@@ -37,9 +37,11 @@
     .pagination-wraper {
         display: flex;
         justify-content: center;
+        overflow-x: auto;
+        padding: 16px 0;
     }
     .pagination-wraper > ul {
-        width: max-content;
+        width: 100%;
         list-style-type: none;
         color: #FFF;
     }

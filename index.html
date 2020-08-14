@@ -25,23 +25,23 @@
 
     </style>
 </head>
-<body onload="x10(1)">
+<body onload="x10('https://netra.news/', 1)">
     <div class="main-content">
         <!-- Header -->
         <div class="header-wraper">
             <h1 class="header-text">Newspaper Crawler - Anti Govt. & Spam<sup>Beta</sup></h1>
         </div>
         
-
+        
         <!-- Navigation Bar -->
         <div class="navi-wraper">
             <ul>
-                <li class="active" onclick='x10(1)'>Netra News</li>
+                <li onclick="x10('https://netra.news/', 1)">Netra News</li>
                 <li>Bangla Insider</li>
-                <li>NorthEast Now</li>
-                <li>Eastern Link</li>
-                <li>Shersha News</li>
-                <li>Defres 360</li>
+                <li onclick="x10('https://nenow.in/', 1)">NorthEast Now</li>
+                <li onclick="x10('https://theeasternlink.com/', 1)">Eastern Link</li>
+                <li>South Asian</li>
+                <li onclick="x10('http://www.defres360.com/', 1)">Defres 360</li>
 
             </ul>
         </div>
@@ -67,10 +67,10 @@
 
     <script>
 
-        function x10(page_no) {
+        function x10(url, page_no) {
            
-
-            var url = 'https://netra.news/wp-json/wp/v2/posts?page=' + page_no;
+            var temp_url = url;
+            var url = url + 'wp-json/wp/v2/posts?page=' + page_no + '&per_page=20';
             var loaderText = document.getElementById('loader-text');
             var res = document.getElementById('result');
             var loaderGif = document.getElementById('loader-gif');
@@ -89,11 +89,7 @@
             ourRequest.onload = function() {
             if (ourRequest.status >= 200 && ourRequest.status < 400) {
                 var data = JSON.parse(ourRequest.responseText);
-                var headers = ourRequest.getAllResponseHeaders();
-                
-                pagi_count = headers.split(/[\r\n]+/);
-                pagi_count = pagi_count[2].split(" ");
-                pagi_count = pagi_count[1];
+                var pagi_count = ourRequest.getResponseHeader('x-wp-totalpages');
 
                 // console.log(pagi_count);
 
@@ -127,7 +123,7 @@
 
 
                     a.innerHTML = j + 1;
-                    li.setAttribute("onclick","x10("+ (j+1) +")");
+                    li.setAttribute("onclick","x10('"+ temp_url +"',"+ (j+1) +")");
                     // a.setAttribute("target","_blank");
                     
                     li.appendChild(a);
