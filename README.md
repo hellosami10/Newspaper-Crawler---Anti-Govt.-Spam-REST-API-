@@ -1,2 +1,2 @@
-# wp_parser_beta
+# Newspaper Crawler - Anti Govt. & Spam
  index.html
